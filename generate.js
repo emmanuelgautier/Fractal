@@ -37,3 +37,7 @@ function fractal(key){
 	    }
 	}
 }
+
+function optimize(){
+	
+}

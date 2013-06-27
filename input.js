@@ -8,9 +8,16 @@ function activate_zoom(){
 		if(zoom >= 100) displayFractal( key, zoom);		
 	};
 	
-	if(document.addEventListener)
-		document.addEventListener('mousewheel', MouseWheelHandler, false);
+	var TimeMouseWheelHandler = function(e){
+		var temp_zoom = zoom;
+		window.setTimeout(function(){
+			if(temp_zoom === zoom)
+				MouseWheelHandler(e);
+		}, 500);
+	};
 	
-	//firefox
-	document.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+	if(document.addEventListener)
+		document.addEventListener('mousewheel', TimeMouseWheelHandler, false);
+	else
+		document.addEventListener("DOMMouseScroll", TimeMouseWheelHandler, false);
 }
