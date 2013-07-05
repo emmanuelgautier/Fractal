@@ -1,3 +1,5 @@
+//https://developer.cdn.mozilla.net/media/uploads/demos/c/a/calvin/054e17c76b19a054d20d6b313ca1d62f/fractal-explorer_1367242706_demo_package/index.html#500/-0.37/0.6/julia
+
 function displayFractal(key, zoom){
 		
 	var config = getConfig( key );
